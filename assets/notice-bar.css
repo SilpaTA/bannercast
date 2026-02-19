@@ -1,0 +1,93 @@
+/* ════════════════════════════════════════
+   Notice Bar Pro – Frontend Styles
+════════════════════════════════════════ */
+
+/* ── Base bar ────────────────────────── */
+.notice-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 99999;
+    box-sizing: border-box;
+}
+
+.notice-bar.nb-top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+}
+
+.notice-bar.nb-bottom {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+}
+
+.notice-bar.nb-inline {
+    position: relative;
+    margin: 12px 0;
+    border-radius: 6px;
+}
+
+/* Body offset so content isn't hidden behind fixed bar */
+body.nb-has-top-bar    { padding-top:    var(--nb-top-height,    44px) !important; }
+body.nb-has-bottom-bar { padding-bottom: var(--nb-bottom-height, 44px) !important; }
+
+/* ── Scrolling ticker ─────────────────── */
+.nb-scroll .nb-ticker {
+    flex: 1;
+    overflow: hidden;
+    /* CRITICAL: must not be flex – inline-flex child needs to be free to grow beyond parent */
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nb-ticker-inner {
+    display: inline-flex;   /* shrinks to content; wider than viewport */
+    align-items: center;
+    white-space: nowrap;
+    /* JS drives transform – no CSS animation here */
+    will-change: transform;
+}
+
+/* ── Static text ──────────────────────── */
+.nb-static .nb-static-text {
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 8px;
+}
+
+/* ── Message item ─────────────────────── */
+.nb-message-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 32px 0 0;   /* gap between items */
+    flex-shrink: 0;
+}
+
+/* ── Link wrap ────────────────────────── */
+.nb-link {
+    display: contents;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ── Close button ─────────────────────── */
+.nb-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    line-height: 1;
+    cursor: pointer;
+    opacity: .7;
+    padding: 0 10px;
+    flex-shrink: 0;
+    transition: opacity .15s;
+}
+.nb-close:hover { opacity: 1; }
+
+/* ── Hidden state ─────────────────────── */
+.notice-bar.nb-hidden { display: none !important; }

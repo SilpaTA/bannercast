@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Main gradient: deep navy to electric blue -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <!-- Accent gradient for bar/icon elements -->
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="round">
+      <rect width="256" height="256" rx="40" ry="40"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded background -->
+  <rect width="256" height="256" rx="40" ry="40" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid lines in background -->
+  <g opacity="0.06" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="64"  x2="256" y2="64"/>
+    <line x1="0" y1="128" x2="256" y2="128"/>
+    <line x1="0" y1="192" x2="256" y2="192"/>
+    <line x1="64"  y1="0" x2="64"  y2="256"/>
+    <line x1="128" y1="0" x2="128" y2="256"/>
+    <line x1="192" y1="0" x2="192" y2="256"/>
+  </g>
+
+  <!-- Broadcast / signal arcs emanating from left megaphone -->
+  <g filter="url(#softglow)" opacity="0.55">
+    <!-- Outermost arc -->
+    <path d="M 68 128 A 72 72 0 0 1 68 128" fill="none"/>
+    <path d="M 52 78  A 72 55 0 0 1 52 178" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+    <path d="M 60 90  A 52 42 0 0 1 60 166" fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 70 103 A 32 28 0 0 1 70 153" fill="none" stroke="#38bdf8" stroke-width="4"   stroke-linecap="round" opacity="0.75"/>
+  </g>
+
+  <!-- Megaphone / speaker body -->
+  <g filter="url(#glow)">
+    <!-- Speaker cone body -->
+    <polygon points="80,108 80,148 108,155 108,101" fill="url(#barGrad)" opacity="0.95"/>
+    <!-- Wide flare of megaphone -->
+    <polygon points="108,101 108,155 136,168 136,88" fill="#6366f1" opacity="0.85"/>
+    <!-- Speaker grille box -->
+    <rect x="68" y="110" width="14" height="36" rx="3" fill="#38bdf8" opacity="0.9"/>
+    <!-- Stand / handle -->
+    <rect x="80" y="148" width="18" height="6" rx="2" fill="#38bdf8" opacity="0.6"/>
+    <rect x="84" y="154" width="10" height="14" rx="3" fill="#38bdf8" opacity="0.5"/>
+  </g>
+
+  <!-- Announcement bar strip (the actual "bar" part of BannerCast) -->
+  <!-- Main bar -->
+  <rect x="148" y="100" width="84" height="22" rx="5" fill="url(#barGrad)" opacity="0.95" filter="url(#glow)"/>
+  <!-- Text lines inside bar (scrolling text simulation) -->
+  <rect x="154" y="106" width="50" height="4" rx="2" fill="white" opacity="0.9"/>
+  <rect x="154" y="113" width="35" height="3" rx="1.5" fill="white" opacity="0.5"/>
+
+  <!-- Second bar (stacked, smaller) -->
+  <rect x="148" y="130" width="84" height="16" rx="4" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.5" opacity="0.85"/>
+  <rect x="154" y="135" width="42" height="3" rx="1.5" fill="#38bdf8" opacity="0.7"/>
+  <rect x="200" y="135" width="16" height="3" rx="1.5" fill="#6366f1" opacity="0.7"/>
+
+  <!-- Third bar -->
+  <rect x="148" y="154" width="84" height="14" rx="3.5" fill="#1e3a5f" stroke="#6366f1" stroke-width="1" opacity="0.6"/>
+  <rect x="154" y="158" width="28" height="3" rx="1.5" fill="#6366f1" opacity="0.6"/>
+
+  <!-- Scroll arrow indicator on bars -->
+  <g fill="#38bdf8" opacity="0.9" filter="url(#glow)">
+    <polygon points="226,108 232,111 226,114" />
+  </g>
+
+  <!-- Plugin wordmark -->
+  <!-- "BANNER" -->
+  <text x="128" y="210"
+        font-family="'Arial Black', 'Arial Bold', sans-serif"
+        font-size="22"
+        font-weight="900"
+        fill="white"
+        text-anchor="middle"
+        letter-spacing="3"
+        opacity="0.95">BANNER</text>
+
+  <!-- "CAST" with gradient feel via two-color trick -->
+  <text x="128" y="233"
+        font-family="'Arial Black', 'Arial Bold', sans-serif"
+        font-size="22"
+        font-weight="900"
+        fill="url(#barGrad)"
+        text-anchor="middle"
+        letter-spacing="5"
+        opacity="1">CAST</text>
+
+  <!-- Top shine overlay -->
+  <rect width="256" height="128" rx="40" ry="40" fill="white" opacity="0.025"/>
+</svg>
