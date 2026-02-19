@@ -1,10 +1,10 @@
 === BannerCast – Announcement Bar & Notice Banner ===
-Contributors:       yourwordpressusername
+Contributors:       shilpaashokan94
 Tags:               announcement bar, notice bar, banner, ticker, scrolling text, top bar, notification bar, broadcast
 Requires at least:  5.8
 Tested up to:       6.5
 Requires PHP:       7.4
-Stable tag:         2.0.0
+Stable tag:         1.0.0
 License:            GPLv2 or later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -150,26 +150,24 @@ Mostly yes. The bar is injected via wp_body_open (top) and wp_footer (bottom), w
 
 == Changelog ==
 
-= 2.0.0 =
-* New: Complete rewrite with per-message Custom Post Type architecture
-* New: Dedicated top-level BannerCast admin menu
-* New: Individual shortcode per message ([bannercast id="X"])
-* New: Per-message style settings — colour, font, background image, height, border
-* New: Per-message scroll settings — enable/disable, adjustable speed
-* New: Per-message display targeting — all pages, selected pages/posts, shortcode only
-* New: Live preview panel on the edit screen
-* New: Message list with visual preview strip and badge indicators
-* New: Enable/disable toggle directly from the list view
-* New: Seamless RAF-based scroll ticker (no CSS animation glitches)
-* New: Body padding auto-adjusts when multiple bars are stacked
-
 = 1.0.0 =
 * Initial release
+* Per-message Custom Post Type architecture
+* Dedicated top-level BannerCast admin menu
+* Individual shortcode per message ([bannercast id="X"])
+* Per-message style settings — colour, font, background image, height, border
+* Per-message scroll settings — enable/disable, adjustable speed
+* Per-message display targeting — all pages, selected pages/posts, shortcode only
+* Live preview panel on the edit screen
+* Message list with visual preview strip and badge indicators
+* Enable/disable toggle directly from the list view
+* Seamless RAF-based scroll ticker (no CSS animation glitches)
+* Body padding auto-adjusts when multiple bars are active
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-Major update: each message is now its own independent item with individual styles and shortcodes. If upgrading from 1.0.0, please recreate your messages in the new interface — old global settings are not migrated automatically.
+= 1.0.0 =
+Initial release of BannerCast. No upgrade steps required.
 
 == Privacy Policy ==
 
